@@ -1,0 +1,26 @@
+<div>
+  <h1>{{ title }}</h1>
+  <ul>
+    <li>Pommes de terre</li>
+    <li [ngStyle]="{ backgroundColor: isVital ? 'red' : 'yellow' }">
+      Raclette
+    </li>
+    <li>Jambon</li>
+    <li [ngClass]="{ vital: isVital }">Cornichon</li>
+    <li>Chou-fleur</li>
+  </ul>
+  <hr />
+  <ul *ngIf="displayGuestList">
+    <li>Brenda</li>
+    <li>Dylan</li>
+    <li>Jean-Mi</li>
+    <li>Kylie</li>
+  </ul>
+  <button (click)="toggleGuestList()">
+    {{ displayGuestList ? "Hide" : "Show" }} guest list
+  </button>
+  <hr />
+  <ul *ngFor="let song of songList">
+    <li>{{ song }}</li>
+  </ul>
+</div>
